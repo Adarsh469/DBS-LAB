@@ -33,12 +33,8 @@ FOREIGN KEY (DNo) REFERENCES Department(DeptNo) ON DELETE CASCADE;
 DELETE FROM Department WHERE DeptNo = 10;
 
 -- 8. Fix Default Salary Syntax
--- Note: DEFAULT is a column property, so we use MODIFY without the CONSTRAINT keyword
 ALTER TABLE Employee MODIFY Salary DEFAULT 10000;
-
--- Test Default Salary by inserting without providing a Salary value
 INSERT INTO Employee (EmpNo, EmpName, Gender, Address, DNo) 
 VALUES (106, 'Dave', 'M', '789 Pine St', 20);
 
--- Verify Results
 SELECT * FROM Employee;
