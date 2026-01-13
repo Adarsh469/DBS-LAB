@@ -1,0 +1,103 @@
+SQL> CREATE TABLE EMPLOYEE (
+  2      EMP_NO NUMBER(5) PRIMARY KEY,
+  3      EMP_NAME VARCHAR2(30),
+  4      EMP_ADDRESS VARCHAR2(50)
+  5  );
+
+Table created.
+
+SQL>
+SQL> INSERT INTO EMPLOYEE VALUES (101, 'Amit Shah', 'MANIPAL');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEE VALUES (102, 'Sara Khan', 'MANGALORE');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEE VALUES (103, 'John Doe', 'MANIPAL');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEE VALUES (104, 'Anita Rao', 'MANGALORE');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEE VALUES (105, 'Rahul V', 'BANGALORE');
+
+1 row created.
+
+SQL>
+SQL> SELECT EMP_NAME FROM EMPLOYEE;
+
+EMP_NAME
+------------------------------
+Amit Shah
+Sara Khan
+John Doe
+Anita Rao
+Rahul V
+
+SQL>
+SQL> SELECT * FROM EMPLOYEE WHERE EMP_ADDRESS = 'MANIPAL';
+
+    EMP_NO EMP_NAME
+---------- ------------------------------
+EMP_ADDRESS
+--------------------------------------------------
+       101 Amit Shah
+MANIPAL
+
+       103 John Doe
+MANIPAL
+
+
+SQL>
+SQL> ALTER TABLE EMPLOYEE ADD SALARY NUMBER(10, 2);
+
+Table altered.
+
+SQL>
+SQL> UPDATE EMPLOYEE SET SALARY = 50000 WHERE EMP_NO = 101;
+
+1 row updated.
+
+SQL> UPDATE EMPLOYEE SET SALARY = 45000 WHERE EMP_NO = 102;
+
+1 row updated.
+
+SQL> UPDATE EMPLOYEE SET SALARY = 55000 WHERE EMP_NO = 103;
+
+1 row updated.
+
+SQL> UPDATE EMPLOYEE SET SALARY = 48000 WHERE EMP_NO = 104;
+
+1 row updated.
+
+SQL> UPDATE EMPLOYEE SET SALARY = 60000 WHERE EMP_NO = 105;
+
+1 row updated.
+
+SQL>
+SQL> DESCRIBE EMPLOYEE;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_NO                                    NOT NULL NUMBER(5)
+ EMP_NAME                                           VARCHAR2(30)
+ EMP_ADDRESS                                        VARCHAR2(50)
+ SALARY                                             NUMBER(10,2)
+
+SQL>
+SQL> DELETE FROM EMPLOYEE WHERE EMP_ADDRESS = 'MANGALORE';
+
+2 rows deleted.
+
+SQL>
+SQL> RENAME EMPLOYEE TO EMPLOYEE1;
+
+Table renamed.
+
+SQL>
+SQL> DROP TABLE EMPLOYEE1;
+
+Table dropped.
